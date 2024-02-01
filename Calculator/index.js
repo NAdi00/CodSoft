@@ -1,10 +1,6 @@
 var input = document.getElementById("input");
 var current = "";
 
-function clearing() {
-    current = "";
-    input.value = null;
-}
 function one() {
     current += 1;
     input.value = current;
@@ -75,8 +71,15 @@ function sign() {
     }
 }
 
-var temp = "43746*87437-344378+43743-72476";
+var temp = "";
 var my_array = [];
+
+function clearing() {
+    temp = "";
+    my_array = [];
+    current = "";
+    input.value = null;
+}
 
 var check = false;
 function checking(object) {
@@ -120,51 +123,100 @@ function cutting(object) {
     }
 }
 
-for(let i = 0; i < 10; i++) {
-    checking(temp);
-    if (check) {
-        cutting(temp);
-    }
-}
-cutting(temp + "*");
-my_array.pop(my_array[-1]);
-
-var check1 = false;
+var checkM = false;
 
 function checking_M(object) {
     for (const i in object) {
         if (object[i] == "*") {
-            check1 = true;
+            checkM = true;
             return
         }
     }
-    check1 = false;
+    checkM = false;
     return
 }
 
-for (let i = 0; i < 5; i++) {
-    checking_M(my_array)
-    console.log(check1);
-}
-
-
-function multi(my_array) {
-    let index1 = my_array.indexOf("*");
-    let a = index1-1;
-    let b = index1+1;
-    let current1 = my_array[a]*my_array[b];
-    my_array[a] = current1;
-    let c = b+1;
-    my_array = my_array.slice(0, index1) +[" ", " "]+ my_array.slice(c);
-    console.log(my_array);
-    return
-}
-for (let i = 0; i < my_array.length; i++) {
-    checking_M(my_array);
-    if (check1) {
-        multi(my_array);
+function multipliying(my_array) {
+    for(let i = 0; i < my_array.length; i++) {
+        if (my_array[i] == "*") {
+            my_array[i-1] = my_array[i-1]*my_array[i+1];
+            my_array.splice(i, 2);
+            console.log(my_array, 'multi');
+        }
     }
 }
-cutting(temp);
-console.log(temp, 'after');
-console.log(my_array);
+
+var checkD = false;
+
+function checking_D(object) {
+    for (const i in object) {
+        if (object[i] == "/") {
+            checkD = true;
+            return
+        }
+    }
+    checkD = false;
+    return
+}
+
+function dividing(my_array) {
+    for(let i = 0; i < my_array.length; i++) {
+        if (my_array[i] == "/") {
+            my_array[i-1] = my_array[i-1]/my_array[i+1];
+            my_array.splice(i, 2);
+            console.log(my_array, 'divide');
+        }
+    }
+}
+
+function adding(my_array) {
+    var answer = 0;
+    if (my_array.length > 0) {
+        for(let i = 0; i < my_array.length; i++) {
+            answer += my_array[i];
+        }
+        // input.value = answer;
+        console.log(answer);
+    }
+}
+
+
+function answer() {
+
+    temp = input.value;
+
+    checking(temp);
+    while (check) {
+        cutting(temp);
+        checking(temp);
+    }
+
+    cutting(temp + "*");
+    my_array.pop(my_array[-1]);
+
+    console.log(my_array);
+
+    checking_D(my_array);
+    while (checkD) {
+        dividing(my_array);
+        checking_D(my_array);
+    }
+
+    checking_M(my_array);
+    while (checkM) {
+        multipliying(my_array);
+        checking_M(my_array);
+    }
+
+    for (let i = 0; i < my_array.length; i++) {
+        if (my_array[i] == "+" || my_array[i] == "-") {
+            my_array.splice(i, 1)
+        }
+    }
+
+    console.log(my_array);
+
+    adding(my_array);
+
+    clearing()
+}
