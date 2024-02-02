@@ -1,6 +1,10 @@
 var input = document.getElementById("input");
 var current = "";
 
+function zero() {
+    current += 0;
+    input.value = current;
+}
 function one() {
     current += 1;
     input.value = current;

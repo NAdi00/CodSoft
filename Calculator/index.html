@@ -11,10 +11,10 @@
         <h1 style="text-align: center;">Calculator</h1>
         <div>
             <div>
-                <input type="text" placeholder="00" style="width: 90%;height: 30px;position: relative;left:5%;font-size: 125%;" id="input"><br>
+                <input type="text" placeholder="00" style="width: 75%;height: 30px;position: relative;left:5%;font-size: 125%;" id="input"><br>
             </div><br>
             <div class="buttons">
-                <button onclick="clearing()">Clear</button>
+                <button onclick="zero()">0</button>
                 <button onclick="back()"><</button>
                 <button onclick="plus()">+</button>
                 <button onclick="minus()">-</button>
@@ -31,8 +31,8 @@
                 <button onclick="nine()">9</button>
                 <button onclick="answer()">=</button>
             </div>
-            
         </div>
+        <button  style="position: absolute;top: 21%;right: 2%;height: 35px;width: 60px;" onclick="clearing()">Clear</button>
     </div>
     <script src="index.js"></script>
 </body>
