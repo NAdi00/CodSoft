@@ -1,6 +1,27 @@
 var input = document.getElementById("input");
 var current = "";
 
+var aaa = document.body;
+
+document.addEventListener('keydown', (event) => {
+    if ((event.key >= '0' && event.key <= '9') || (event.keyCode >= 48 && event.keyCode <= 57)) {
+        // Do something when a number key is pressed
+        console.log(`You pressed the number key ${event.key}.`);
+        current += event.key;
+        input.value = current;
+    }
+    if (event.key == "*" || event.key == "-" || event.key == "+" || event.key == "/" ) {
+        // Do something when a number key is pressed
+        console.log(`You pressed the number key ${event.key}.`);
+        current += event.key;
+        input.value = current;
+    }
+    if (event.key == 'backspace') {
+        current  = current.slice(0, -1);
+        input.value = current;
+    }
+})
+
 function zero() {
     current += 0;
     input.value = current;
@@ -9,6 +30,7 @@ function one() {
     current += 1;
     input.value = current;
 }
+
 function two() {
     current += 2;
     input.value = current;
@@ -82,7 +104,7 @@ function clearing() {
     temp = "";
     my_array = [];
     current = "";
-    input.value = null;
+    return input.value = null;
 }
 
 var check = false;
@@ -181,9 +203,9 @@ function adding(my_array) {
         }
         // input.value = answer;
         console.log(answer);
+        input.value = answer;
     }
 }
-
 
 function answer() {
 
@@ -222,5 +244,7 @@ function answer() {
 
     adding(my_array);
 
-    clearing()
+    temp = "";
+    my_array = [];
+    current = "";
 }
