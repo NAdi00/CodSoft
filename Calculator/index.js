@@ -1,27 +1,32 @@
 var input = document.getElementById("input");
 var current = "";
-
+var temp = "";
+var my_array = [];
 var aaa = document.body;
 
 document.addEventListener('keydown', (event) => {
+    ////////// Add pressed key to input value and current string
     if ((event.key >= '0' && event.key <= '9') || (event.keyCode >= 48 && event.keyCode <= 57)) {
-        // Do something when a number key is pressed
+        ////////// Add pressed number to input value and current string when number is pressed
         console.log(`You pressed the number key ${event.key}.`);
         current += event.key;
         input.value = current;
     }
     if (event.key == "*" || event.key == "-" || event.key == "+" || event.key == "/" ) {
-        // Do something when a number key is pressed
+        // Add pressed sign to input value and current string
         console.log(`You pressed the number key ${event.key}.`);
         current += event.key;
         input.value = current;
     }
     if (event.key == 'backspace') {
+        //Remove last element from input when backspace button is pressed
         current  = current.slice(0, -1);
         input.value = current;
     }
 })
 
+/////These functions will run when each button on the screen is clicked
+//////-- The will update current string and input value 
 function zero() {
     current += 0;
     input.value = current;
@@ -30,7 +35,6 @@ function one() {
     current += 1;
     input.value = current;
 }
-
 function two() {
     current += 2;
     input.value = current;
@@ -83,9 +87,14 @@ function divide() {
     current += '/';
     input.value = current;
 }
+function clearing() {
+    temp = "";
+    my_array = [];
+    current = "";
+    return input.value = null;
+}
 
-///////////////////////ANSWER
-
+////////////////Adjust values that has a negative sign/ preceedor of minus
 var signing = 1;
 var count  = 0
 function sign() {
@@ -97,18 +106,9 @@ function sign() {
     }
 }
 
-var temp = "";
-var my_array = [];
-
-function clearing() {
-    temp = "";
-    my_array = [];
-    current = "";
-    return input.value = null;
-}
-
+///This two functions convert (current) string/input string to Array(my_array)
 var check = false;
-function checking(object) {
+function checking_operations(object) {
     for (const i in object) {
         if (object[i] == "*" || object[i] == "/" || object[i] == "+" || object[i] == "-") {
             check = true;
@@ -118,8 +118,7 @@ function checking(object) {
     check = false;
     return
 }
-
-function cutting(object) {
+function Convert_String_to_Array(object) {
     let object1 = "";
     for (const i in object) {
         if (object[i] == "*" || object[i] == "/" || object[i] == "+" || object[i] == "-") {
@@ -149,9 +148,9 @@ function cutting(object) {
     }
 }
 
+//////////Functions to perfom multiplication assignments 
 var checkM = false;
-
-function checking_M(object) {
+function checking_Multiple_operations(object) {
     for (const i in object) {
         if (object[i] == "*") {
             checkM = true;
@@ -161,7 +160,6 @@ function checking_M(object) {
     checkM = false;
     return
 }
-
 function multipliying(my_array) {
     for(let i = 0; i < my_array.length; i++) {
         if (my_array[i] == "*") {
@@ -172,9 +170,9 @@ function multipliying(my_array) {
     }
 }
 
+//////////Functions to perform division assignments
 var checkD = false;
-
-function checking_D(object) {
+function checking_Division_operations(object) {
     for (const i in object) {
         if (object[i] == "/") {
             checkD = true;
@@ -184,7 +182,6 @@ function checking_D(object) {
     checkD = false;
     return
 }
-
 function dividing(my_array) {
     for(let i = 0; i < my_array.length; i++) {
         if (my_array[i] == "/") {
@@ -195,6 +192,7 @@ function dividing(my_array) {
     }
 }
 
+/////////This function perfom all additions operations/assignments 
 function adding(my_array) {
     var answer = 0;
     if (my_array.length > 0) {
@@ -207,31 +205,32 @@ function adding(my_array) {
     }
 }
 
+/////////////////////MAIN FUNCTION///////////////////////MAIN FUNCTION/////////////////
 function answer() {
 
     temp = input.value;
 
-    checking(temp);
+    checking_operations(temp);
     while (check) {
-        cutting(temp);
-        checking(temp);
+        Convert_String_to_Array(temp);
+        checking_operations(temp);
     }
 
-    cutting(temp + "*");
+    Convert_String_to_Array(temp + "*");
     my_array.pop(my_array[-1]);
 
     console.log(my_array);
 
-    checking_D(my_array);
+    checking_Division_operations(my_array);
     while (checkD) {
         dividing(my_array);
-        checking_D(my_array);
+        checking_Division_operations(my_array);
     }
 
-    checking_M(my_array);
+    checking_Multiple_operations(my_array);
     while (checkM) {
         multipliying(my_array);
-        checking_M(my_array);
+        checking_Multiple_operations(my_array);
     }
 
     for (let i = 0; i < my_array.length; i++) {
