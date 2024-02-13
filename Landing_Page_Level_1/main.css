@@ -11,5 +11,8 @@
     margin: 20px;
 }
 .neck {
-    height: 300px;background-color: aqua;
+    height: 300px;background-color: aqua;position: relative;padding-left: 10%;
+}
+.About {
+    width: 60%;position: relative;left: 10%;
 }
