@@ -26,6 +26,7 @@ The website has
 This is a simple calculator that allow operations four main operations plus, minus, divide and multiply.The project was build by raw html,css and Javascript. The IDE used is Visual Studio Code and Web Browser Chrome was used for debbuging.This is a 1 page website that only contain calculator design.
 
 /////////////////////////
+
 LEVEL 2
 
 1.Tribute Page
