@@ -1,8 +1,8 @@
 .nav_bar_11 {
-    height: 35px;background-color: cadetblue;padding-top: 15px;
+    height: 35px;background-color: cadetblue;display: flex;justify-content: end;align-items: center;
 }
 .nav_bar_11 > span {
-    margin-right: 20px;float: right;display: inline;
+    margin-right: 20px;display: inline;
 }
 .Services {
     display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -28,4 +28,7 @@
 }
 button {
     background-color: blueviolet;width:65px;color: white;height: 30px;border-radius: 5px;
+}
+a {
+    display: inline;text-decoration: none;color: black;
 }

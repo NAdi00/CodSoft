@@ -1,5 +1,7 @@
 html, body {
     width:100%; overflow-x: hidden;
+    /* background-image: url('pexels-pixabay-356056.jpg'); */
+    background-size: cover;color: white;background-color: rgb(150, 150, 150);
 }
 @media screen and (min-width:850px) {
 .skills {
