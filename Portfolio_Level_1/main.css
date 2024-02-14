@@ -2,6 +2,7 @@ html, body {
     width:100%; overflow-x: hidden;
     /* background-image: url('pexels-pixabay-356056.jpg'); */
     background-size: cover;color: white;background-color: rgb(150, 150, 150);
+    border: 2px solid yellowgreen;overflow: hidden;
 }
 @media screen and (min-width:850px) {
 .skills {
@@ -11,15 +12,18 @@ html, body {
 .about {
     position: relative;left:20%;width:60%;text-align: center;
 }
+.about > img {
+    box-shadow: inset 5px 5px 10px yellowgreen;
+}
+}
 pre {
     display: inline;
 }
 .projects {
     display: block;border-radius: 5px;text-align: center;
 }
-}
-.projects > details{
-    border: 2px solid black;height:40px;width:60%;margin-left: 20%;
+.projects > details {
+   height:100px;width:60%;margin-left: 20%;background-color: yellowgreen;margin-bottom: 2px;
 }
 img {
     border-radius: 40%;
