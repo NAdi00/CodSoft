@@ -26,8 +26,11 @@ The website has
 This is a simple calculator that allow operations four main operations plus, minus, divide and multiply.The project was build by raw html,css and Javascript. The IDE used is Visual Studio Code and Web Browser Chrome was used for debbuging.This is a 1 page website that only contain calculator design.
 
 /////////////////////////
+
 LEVEL 2
+
 1.Tribute Page
 The page is a bio about Desmond Tutu. It is build with raw html, css. This is a 1 page website to display Desmond Tutus work and contributions in life
+
 2.Job Board
 The website is made of several pages to display jobs currenlty available to users.It is made with MERN(Mongodb, Express, React and Nodejs) stack technologies.
