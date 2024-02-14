@@ -12,7 +12,8 @@ Projects:
  Level 2:
   - Tribute Page
   - Job Board
-
+////////
+LEVEL 1
 1.Landing page:
 This is a 1 page website whose main idea is to display summary of certain business functions. The project was build by raw html and css. The IDE used is Visual Studio Code and Web Browser Chrome.
 The page sessions includes top_nav_bar, Header, About, Projects, Services and footer. Few pictures are added to better the page layout design.
@@ -23,3 +24,8 @@ The website has
 
 3.Calculator:
 This is a simple calculator that allow operations four main operations plus, minus, divide and multiply.The project was build by raw html,css and Javascript. The IDE used is Visual Studio Code and Web Browser Chrome was used for debbuging.This is a 1 page website that only contain calculator design.
+
+/////////////////////////
+LEVEL 2
+1.Tribute Page
+The page is a bio about Desmond Tutu. It is build with raw html, css. This is a 1 page website to display Desmond Tutus work and contributions in life
