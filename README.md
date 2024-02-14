@@ -9,6 +9,9 @@ Projects:
   - Landing Page
   - Portfolio Website
   - Calculator
+ Level 2:
+  - Tribute Page
+  - Job Board
 
 1.Landing page:
 This is a 1 page website whose main idea is to display summary of certain business functions. The project was build by raw html and css. The IDE used is Visual Studio Code and Web Browser Chrome.
