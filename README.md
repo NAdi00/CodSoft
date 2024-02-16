@@ -31,6 +31,3 @@ LEVEL 2
 
 1.Tribute Page
 The page is a bio about Desmond Tutu. It is build with raw html, css. This is a 1 page website to display Desmond Tutus work and contributions in life
-
-2.Job Board
-The website is made of several pages to display jobs currenlty available to users.It is made with MERN(Mongodb, Express, React and Nodejs) stack technologies.
