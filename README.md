@@ -11,7 +11,6 @@ Projects:
   - Calculator
  Level 2:
   - Tribute Page
-  - Job Board
 ////////
 LEVEL 1
 1.Landing page:
